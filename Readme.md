@@ -38,7 +38,7 @@ npm run dev
 ```
 <br />
 
-![plot](./screenshot1.png)
+![plot](./Screenshot1.png)
 
 
 <br />
