@@ -2,7 +2,7 @@ Simple portfolio server-side with react-app and gin-gonic.
 
 ### Installation
 ```bash
-git clone username/repository
+git clone https://github.com/Fiqry919/portfolio.git
 ```
 then customize your configuration in `backend/config.json`
 
