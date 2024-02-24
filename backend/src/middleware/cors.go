@@ -10,9 +10,6 @@ func Cors() gin.HandlerFunc {
 
 	config.AllowOrigins = []string{
 		"http://localhost:3000",
-		"http://8.219.135.25:3001",
-		"https://sincez.cloud",
-		"https://portfolio.sincez.cloud",
 	}
 
 	config.AllowCredentials = true

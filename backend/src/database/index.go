@@ -45,6 +45,7 @@ func init() {
 		&schema.OtherInformationCategory{},
 		&schema.OtherInformation{},
 		&schema.Project{},
+		&schema.Skill{},
 	)
 
 	Connection = db

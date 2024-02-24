@@ -61,6 +61,12 @@ func GetConfig(c *gin.Context) {
 	db.Connection.Where(&schema.OtherInformation{CategoryID: 3}).Find(&data.Certifications)
 	// getting project
 	db.Connection.Model(&schema.Project{}).Find(&data.Projects)
+	// getting skill
+	var skills []schema.Skill
+	db.Connection.Model(&schema.Skill{}).Find(&skills)
+	for _, m := range skills {
+		data.Skills = append(data.Skills, m.Name)
+	}
 
 	common.JSON(c, &common.Response{Data: data})
 }

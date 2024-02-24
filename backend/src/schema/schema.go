@@ -19,6 +19,7 @@ type Config struct {
 	Experiences    []OtherInformation `json:"experiences"`
 	Certifications []OtherInformation `json:"certifications"`
 	Projects       []Project          `json:"projects"`
+	Skills         []string           `json:"skills"`
 }
 
 type Profile struct {
@@ -69,4 +70,9 @@ type Project struct {
 	Description string `gorm:"type:varchar" json:"description"`
 	Image       string `gorm:"type:varchar" json:"image"`
 	Link        string `gorm:"type:varchar" json:"link"`
+}
+
+type Skill struct {
+	ID   uint   `jgorm:"primaryKey" json:"-"`
+	Name string `gorm:"type:varchar" json:"name"`
 }

@@ -16,6 +16,7 @@ func Init() {
 		&schema.OtherInformationCategory{},
 		&schema.OtherInformation{},
 		&schema.Project{},
+		&schema.Skill{},
 	)
 	db.Connection.AutoMigrate(
 		&schema.Profile{},
@@ -24,6 +25,7 @@ func Init() {
 		&schema.OtherInformationCategory{},
 		&schema.OtherInformation{},
 		&schema.Project{},
+		&schema.Skill{},
 	)
 
 	cmd := exec.Command("go", "run", "src/database/init/main.go")
