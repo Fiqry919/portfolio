@@ -1,4 +1,4 @@
-Simple portfolio server-side with react-app and gin-gonic.
+Server-side portfolio app with react and gin-gonic.
 
 ### Installation
 ```bash
