@@ -1,0 +1,108 @@
+{
+  "profile": {
+    "avatar": "public/images/avatar.png",
+    "name": "Muhammad Fiqry",
+    "bio": "Fullstack Developer, PHP, Javascript, Typescript, Laravel, Node.js",
+    "resume": ""
+  },
+  "github": {
+    "username": "fiqry919",
+    "display": true,
+    "sortBy": "stars",
+    "limit": 10,
+    "fork": false,
+    "exclude": "fiqry919/ex-app"
+  },
+  "information": [
+    {
+      "icon": "mdi:location",
+      "title": "Address",
+      "value": "your address",
+      "link": ""
+    },
+    {
+      "icon": "mdi:github",
+      "title": "Github",
+      "value": "your github",
+      "link": ""
+    },
+    {
+      "icon": "mdi:email",
+      "title": "Email",
+      "value": "your@mail.com",
+      "link": ""
+    },
+    {
+      "icon": "mdi:linkedin",
+      "title": "LinkedIn",
+      "value": "and your information",
+      "link": ""
+    }
+  ],
+  "skills": [
+    "PHP",
+    "Laravel",
+    "Javascript",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "MySQL",
+    "PostgreSQL",
+    "mongoDB"
+  ],
+  "educations": [
+    {
+      "categoryId": 1,
+      "from": "2000",
+      "to": "2003",
+      "title": "degree",
+      "value": "Institution"
+    },
+    {
+      "categoryId": 1,
+      "from": "2005",
+      "to": "2009",
+      "title": "degree",
+      "value": "Institution"
+    }
+  ],
+  "experiences": [
+    {
+      "categoryId": 2,
+      "from": "November 2010",
+      "to": "March 2013",
+      "title": "Position",
+      "value": "Company"
+    },
+    {
+      "categoryId": 2,
+      "from": "Mei 2013",
+      "to": "September 2016",
+      "title": "Position",
+      "value": "Company"
+    }
+  ],
+  "certifications": [
+    {
+      "categoryId": 3,
+      "from": "September 2015",
+      "title": "Certificate",
+      "value": "Description",
+      "link": "https://example.certificate.com/image.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Name",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.",
+      "image": "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg",
+      "link": "https://example.com"
+    },
+    {
+      "title": "Project Name",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.",
+      "image": "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg",
+      "link": "https://example.com"
+    }
+  ]
+}
