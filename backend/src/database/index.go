@@ -1,8 +1,10 @@
+//lint:file-ignore U1000 Ignore all unused code, it's generated
 package db
 
 import (
 	"fmt"
 
+	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"service.com/portfolio/src/common"
@@ -19,20 +21,8 @@ const (
 var Connection *gorm.DB
 
 func init() {
-	/* enable for sqlite */
-	dsn := fmt.Sprintf("%s.db", common.Env("database"))
-	db, err := gorm.Open(sqlite.Open(dsn), &gorm.Config{})
-
-	/* enable for postgresql */
-	// dsn := fmt.Sprintf("host=%s port=%s dbname=%s user=%s password=%s sslmode=%s",
-	// 	common.Env("DB_HOST"),
-	// 	common.Env("DB_PORT"),
-	// 	common.Env("DATABASE"),
-	// 	common.Env("DB_USERNAME"),
-	// 	common.Env("DB_PASSWORD"),
-	// 	Disable,
-	// )
-	// db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	/* change this as needed */
+	db, err := usePostgres() // useSqlite() | usePostgres()
 
 	if err != nil {
 		panic("failed to connect database")
@@ -49,4 +39,21 @@ func init() {
 	)
 
 	Connection = db
+}
+
+func useSqlite() (*gorm.DB, error) {
+	dsn := fmt.Sprintf("%s.db", common.Env("database"))
+	return gorm.Open(sqlite.Open(dsn), &gorm.Config{})
+}
+
+func usePostgres() (*gorm.DB, error) {
+	dsn := fmt.Sprintf("host=%s port=%s dbname=%s user=%s password=%s sslmode=%s",
+		common.Env("DB_HOST"),
+		common.Env("DB_PORT"),
+		common.Env("DATABASE"),
+		common.Env("DB_USERNAME"),
+		common.Env("DB_PASSWORD"),
+		Disable,
+	)
+	return gorm.Open(postgres.Open(dsn), &gorm.Config{})
 }
