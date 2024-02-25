@@ -22,7 +22,7 @@ var Connection *gorm.DB
 
 func init() {
 	/* change this as needed */
-	db, err := usePostgres() // useSqlite() | usePostgres()
+	db, err := useSqlite() // useSqlite() | usePostgres()
 
 	if err != nil {
 		panic("failed to connect database")
