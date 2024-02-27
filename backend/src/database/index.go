@@ -20,24 +20,23 @@ const (
 
 var Connection *gorm.DB
 
-func init() {
-	/* change this as needed */
-	db, err := useSqlite() // useSqlite() | usePostgres()
+var Schema = &[]interface{}{
+	&schema.Profile{},
+	&schema.Github{},
+	&schema.Information{},
+	&schema.OtherInformationCategory{},
+	&schema.OtherInformation{},
+	&schema.Project{},
+	&schema.Skill{},
+}
 
+func init() {
+	/* useSqlite() || usePostgres() */
+	db, err := useSqlite()
 	if err != nil {
 		panic("failed to connect database")
 	}
-
-	db.AutoMigrate(
-		&schema.Profile{},
-		&schema.Github{},
-		&schema.Information{},
-		&schema.OtherInformationCategory{},
-		&schema.OtherInformation{},
-		&schema.Project{},
-		&schema.Skill{},
-	)
-
+	db.AutoMigrate(*Schema...)
 	Connection = db
 }
 

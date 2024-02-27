@@ -14,12 +14,13 @@ func Serve() {
 	router := gin.Default()
 	router.Static("/public", "./resources/public")
 	router.Use(middleware.Cors())
+	router.Use(middleware.Logger())
 
 	router.GET("/mode", controller.GetMode)
 	router.POST("/config", controller.GetConfig)
 
 	common.Clear()
-	host := fmt.Sprintf("%s:%s", common.Env("app_url"), common.Env("app_port"))
+	host := fmt.Sprintf("%s:%s", common.Env("host"), common.Env("port"))
 	fmt.Printf("listening on %s\n", host)
 
 	router.Run(host)

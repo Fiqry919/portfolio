@@ -16,7 +16,7 @@ import (
 )
 
 // remove specific index from array
-func array_remove(array []string, index int) []string {
+func RemoveIndex(array []string, index int) []string {
 	return append(array[:index], array[index+1:]...)
 }
 
@@ -47,17 +47,15 @@ func DateNow(format string, addDate int) string {
 // read .env file
 func Env(key string) string {
 	err := godotenv.Load(".env")
-
 	if err != nil {
 		log.Fatal(".env file not found")
 	}
-
 	return os.Getenv(strings.ToUpper(key))
 }
 
-func exctract_path(path string) string {
+func Exctract_path(path string) string {
 	split := strings.Split(path, "/")
-	split = array_remove(split, len(split)-1)
+	split = RemoveIndex(split, len(split)-1)
 	return strings.Join(split, "/")
 }
 
@@ -93,13 +91,12 @@ func ReadJSON(file string, result interface{}) (interface{}, error) {
 		fmt.Println("Error unmarshaling JSON:", err)
 		return nil, err
 	}
-
 	return result, nil
 }
 
 // write a file
 func WriteFile(path string, content string) error {
-	MakeDir(exctract_path(path), 0777)
+	MakeDir(Exctract_path(path), 0777)
 	file, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return err
