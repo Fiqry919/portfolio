@@ -25,8 +25,8 @@ declare global {
     var ResponseError: ResponseErrorConstructor
 }
 
-global.ResponseError = function (this: ResponseError, message: any, code?: number) {
-    this.code = code || 500;
+global.ResponseError = function (this: ResponseError, message: any, code: number = 500) {
+    this.code = code;
     this.message = message;
 } as any;
 
